@@ -8,9 +8,22 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <!-- <load src="./partials/header.html" icon-path="img/sprite.svg#logo" /> -->
+    <main>
+      <search>
+        <form>
+          <input
+            type="text"
+            name="search-text"
+            id="search-text"
+            placeholder="Search images..."
+          />
+          <button type="submit">Search</button>
+        </form>
+      </search>
 
-    <main></main>
+      <p class="loader-box hidden"><span class="loader"></span></p>
+      <ul class="gallery"></ul>
+    </main>
 
     <script type="module" src="./main.js"></script>
   </body>
