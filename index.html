@@ -6,31 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vanilla App Template</title>
     <script type="module" crossorigin src="/goit-js-hw-11/index.js"></script>
-    <link rel="stylesheet" crossorigin href="/goit-js-hw-11/assets/index-CFrPtiMb.css">
+    <link rel="modulepreload" crossorigin href="/goit-js-hw-11/assets/vendor-hwdYKDic.js">
+    <link rel="stylesheet" crossorigin href="/goit-js-hw-11/assets/vendor-CX4EDM7x.css">
+    <link rel="stylesheet" crossorigin href="/goit-js-hw-11/assets/index-Tuzwqfrx.css">
   </head>
   <body>
-    <!-- <header class="header">
-  <div class="container">
-    <nav class="nav">
-      <a class="nav-logo" href="./index.html" aria-label="Site logo">
-        <svg class="nav-logo-icon" width="100" height="30">
-          <use href="img/sprite.svg#logo"></use>
-        </svg>
-      </a>
-      <ul class="nav-list">
-        <li class="nav-item">
-          <a class="nav-link {=$highlight-act}" href="./page-2.html">Page 2</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link {=$highlight-curr}" href="./page-3.html">Page 3</a>
-        </li>
-      </ul>
-    </nav>
-  </div>
-</header>
- -->
+    <main>
+      <search>
+        <form>
+          <input
+            type="text"
+            name="search-text"
+            id="search-text"
+            placeholder="Search images..."
+          />
+          <button type="submit">Search</button>
+        </form>
+      </search>
 
-    <main></main>
+      <p class="loader-box hidden"><span class="loader"></span></p>
+      <ul class="gallery"></ul>
+    </main>
 
   </body>
 </html>
