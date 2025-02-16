@@ -4,17 +4,19 @@ import {
   renderImages,
   showLoader,
   showMessage,
+  showMessageErr,
 } from './js/render-functions';
 
 const form = document.querySelector('form');
 const input = document.querySelector('#search-text');
+// const loaderBox = document.querySelector('.loader-box');
 
 form.addEventListener('submit', handleSubmit);
 
 function handleSubmit(e) {
   e.preventDefault();
 
-  const searchText = input.value;
+  const searchText = input.value.trim();
 
   if (!searchText) return;
 
@@ -24,13 +26,17 @@ function handleSubmit(e) {
 
   fetchImages(searchText)
     .then(data => handleSearchResults(data.data.hits))
-    .catch(err => console.log(err));
-}
+    .catch(err => {
+      // loaderBox.textContent = 'Something went wrong...';
+      showMessageErr();
+      console.log(err);
+    });
 
-function handleSearchResults(images) {
-  if (images.length == 0) {
-    showMessage();
+  function handleSearchResults(images) {
+    if (images.length == 0) {
+      showMessage();
+    }
+
+    renderImages(images);
   }
-
-  renderImages(images);
 }

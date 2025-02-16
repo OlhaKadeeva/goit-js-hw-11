@@ -5,7 +5,7 @@ import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
 const gallery = document.querySelector('.gallery');
-const loader = document.querySelector('.loader-box');
+const loaderBox = document.querySelector('.loader-box');
 
 export function renderImages(images) {
   const galleryHtml = images
@@ -68,12 +68,13 @@ const lightbox = new SimpleLightbox('.gallery a', {
 
 export function showLoader() {
   gallery.classList.add('hidden');
-  loader.classList.remove('hidden');
+  loaderBox.classList.remove('hidden');
+  loaderBox.innerHTML = '"Wait, the image is loaded..."';
 }
 
 export function hideLoader() {
   gallery.classList.remove('hidden');
-  loader.classList.add('hidden');
+  loaderBox.classList.add('hidden');
 }
 
 export function showMessage() {
@@ -81,6 +82,19 @@ export function showMessage() {
     position: 'topRight',
     message:
       'Sorry, there are no images matching your search query. Please try again!',
+    close: `true`,
+    title: 'Error',
+    messageSize: '16px',
+    messageLineHeight: '24px',
+    messageColor: 'white',
+    maxWidth: '432px',
+    backgroundColor: '#EF4040',
+  });
+}
+export function showMessageErr() {
+  iziToast.show({
+    position: 'topRight',
+    message: 'Something went wrong...',
     close: `true`,
     title: 'Error',
     messageSize: '16px',
