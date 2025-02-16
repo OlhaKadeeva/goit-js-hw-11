@@ -28,7 +28,7 @@ function handleSubmit(e) {
 }
 
 function handleSearchResults(images) {
-  if (!images.length) {
+  if (images.length == 0) {
     showMessage();
   }
 
