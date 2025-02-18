@@ -9,7 +9,6 @@ import {
 
 const form = document.querySelector('form');
 const input = document.querySelector('#search-text');
-// const loaderBox = document.querySelector('.loader-box');
 
 form.addEventListener('submit', handleSubmit);
 
@@ -27,7 +26,7 @@ function handleSubmit(e) {
   fetchImages(searchText)
     .then(data => handleSearchResults(data.data.hits))
     .catch(err => {
-      // loaderBox.textContent = 'Something went wrong...';
+      hideLoader();
       showMessageErr();
       console.log(err);
     });
